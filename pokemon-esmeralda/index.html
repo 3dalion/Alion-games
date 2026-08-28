@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
   <!-- ✏️ CAMBIAR: nombre del juego que aparece en la pestaña del navegador -->
-  <title>Pokemon esmeralda</title>
+  <title>pokemon esmeralda</title>
 
   <style>
     /* 🔒 NO TOCAR: estilo base, igual para todos los juegos */
@@ -13,7 +13,7 @@
     #game { width: 100vw; height: 100vh; }
   </style>
 
-  <!-- 🔒 NO TOCAR: activa el modo multi-hilo para que corra fluido en celular -->
+  <!-- 🔒 NO TOCAR: activa la posibilidad de usar multi-hilo en el navegador -->
   <script src="../coi-serviceworker.js"></script>
 </head>
 <body>
@@ -36,6 +36,9 @@
 
     // ✏️ CAMBIAR: nombre del juego que se ve DENTRO del emulador
     EJS_gameName = "pokemon esmeralda";
+
+    // 🔒 NO TOCAR: obliga al emulador a usar multi-hilo (necesario junto con coi-serviceworker.js)
+    EJS_threads = true;
   </script>
 
   <!-- 🔒 NO TOCAR: carga el emulador desde el CDN -->
