@@ -3,21 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>Pokémon Esmeralda</title>
+
+  <!-- ✏️ CAMBIAR: nombre del juego que aparece en la pestaña del navegador -->
+  <title>Pokemon esmeralda</title>
+
   <style>
+    /* 🔒 NO TOCAR: estilo base, igual para todos los juegos */
     body { margin: 0; background: #111; }
     #game { width: 100vw; height: 100vh; }
   </style>
+
+  <!-- 🔒 NO TOCAR: activa el modo multi-hilo para que corra fluido en celular -->
+  <script src="../coi-serviceworker.js"></script>
 </head>
 <body>
+
+  <!-- 🔒 NO TOCAR: aquí se dibuja el juego -->
   <div id="game"></div>
+
   <script>
+    // 🔒 NO TOCAR: dónde pone el emulador el juego en la página
     EJS_player = '#game';
+
+    // 🔒 NO TOCAR (salvo que tu ROM no se llame "rom.gba")
     EJS_gameUrl = 'rom.gba';
+
+    // ✏️ CAMBIAR SOLO SI NO ES GBA: 'gba', 'nes', 'snes', 'gb', 'gbc', etc.
     EJS_core = 'gba';
+
+    // 🔒 NO TOCAR: siempre apunta al CDN oficial de EmulatorJS
     EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
-    EJS_gameName = 'Pokémon Esmeralda';
+
+    // ✏️ CAMBIAR: nombre del juego que se ve DENTRO del emulador
+    EJS_gameName = "pokemon esmeralda";
   </script>
+
+  <!-- 🔒 NO TOCAR: carga el emulador desde el CDN -->
   <script src="https://cdn.emulatorjs.org/stable/data/loader.js"></script>
+
 </body>
 </html>
