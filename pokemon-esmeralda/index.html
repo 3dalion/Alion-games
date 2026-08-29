@@ -5,16 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
   <!-- ✏️ CAMBIAR: nombre del juego que aparece en la pestaña del navegador -->
-  <title>pokemon esmeralda</title>
+  <title>Pokemon esmeralda</title>
 
   <style>
-    /* 🔒 NO TOCAR: estilo base, igual para todos los juegos */
+    /* 🔒 NO TOCAR: quita márgenes por defecto del navegador */
     body { margin: 0; background: #111; }
-    #game { width: 100vw; height: 100vh; }
-  </style>
 
-  <!-- 🔒 NO TOCAR: activa la posibilidad de usar multi-hilo en el navegador -->
-  <script src="../coi-serviceworker.js"></script>
+    #game {
+      width: 100vw;
+      height: 100vh;         /* 🔒 respaldo para navegadores viejos que no soportan dvh */
+      height: 100dvh;         /* ✏️ se ajusta a la barra del navegador, evita que se corte arriba */
+
+      /* ✏️ centra el juego y sus controles, evita que queden muy separados */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
 </head>
 <body>
 
@@ -35,10 +42,7 @@
     EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
 
     // ✏️ CAMBIAR: nombre del juego que se ve DENTRO del emulador
-    EJS_gameName = "pokemon esmeralda";
-
-    // 🔒 NO TOCAR: obliga al emulador a usar multi-hilo (necesario junto con coi-serviceworker.js)
-    EJS_threads = true;
+    EJS_gameName = "Pokemon esmeralda";
   </script>
 
   <!-- 🔒 NO TOCAR: carga el emulador desde el CDN -->
