@@ -5,18 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
   <!-- ✏️ CAMBIAR: nombre del juego que aparece en la pestaña del navegador -->
-  <title>Pokemon esmeralda</title>
+  <title>pokemon esmeralda</title>
 
   <style>
-    /* 🔒 NO TOCAR: quita márgenes por defecto del navegador */
-    body { margin: 0; background: #111; }
+    /* 🔒 NO TOCAR: quita márgenes y evita que aparezca scroll/desborde lateral */
+    html, body { 
+      margin: 0; 
+      padding: 0;
+      overflow: hidden; 
+      background: #111; 
+    }
 
     #game {
-      width: 100vw;
-      height: 100vh;         /* 🔒 respaldo para navegadores viejos que no soportan dvh */
-      height: 100dvh;         /* ✏️ se ajusta a la barra del navegador, evita que se corte arriba */
+      width: 100%;            /* 🔒 NO TOCAR: evita que el contenido se desborde a la derecha */
+      height: 100vh;           /* 🔒 NO TOCAR: respaldo para navegadores viejos */
+      height: 100dvh;           /* 🔒 NO TOCAR: ajusta la altura según la barra del navegador */
 
-      /* ✏️ centra el juego y sus controles, evita que queden muy separados */
+      /* 🔒 NO TOCAR: centra el juego y sus controles */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -42,7 +47,7 @@
     EJS_pathtodata = 'https://cdn.emulatorjs.org/stable/data/';
 
     // ✏️ CAMBIAR: nombre del juego que se ve DENTRO del emulador
-    EJS_gameName = "Pokemon esmeralda";
+    EJS_gameName = "pokemon esmeralda";
   </script>
 
   <!-- 🔒 NO TOCAR: carga el emulador desde el CDN -->
